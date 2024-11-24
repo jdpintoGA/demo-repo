@@ -1,3 +1,5 @@
 # Demo
 
-Git troubleshooting
+  Git troubleshooting
+
+  Errors And Solutions
