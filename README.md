@@ -2,4 +2,6 @@
 
   Git troubleshooting
 
-  Errors And Solutions
+## Subheader
+
+ Git Errors And Solutions
