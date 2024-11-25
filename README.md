@@ -1,4 +1,4 @@
-# Consultoria Técnica - Desenvolvimento Web
+# Consultadoria Técnica 25 Novembro - Desenvolvimento Web
 
 Este documento descreve as soluções propostas para as questões abordadas na consultoria de desenvolvimento web. Ele está organizado em tópicos detalhados, abordando problemas técnicos, organização de código, responsividade, acessibilidade e melhores práticas.
 
