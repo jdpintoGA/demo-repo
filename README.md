@@ -49,13 +49,40 @@ Este documento descreve as soluções propostas para as questões abordadas na c
   ```
 
 ### **Qual o preparo para modularização correta?**
-1. Dividir responsabilidades, separando estilos, scripts e componentes em arquivos próprios.
-2. Organizar pastas, como `assets/css` para estilos, `assets/js` para scripts e `components` para HTML reutilizável.
-3. Criar um guia para o time documentando como cada módulo funciona.
+1. Dividir responsabilidades: Separando estilos, scripts e componentes em arquivos próprios.
+2. Organizar pastas:
+  - `assets/css` para estilos
+  - `assets/js` para scripts
+  - `components` para HTML reutilizável.
+3. Criar um guia para a equipa documentando no `README.md` como cada módulo funciona. 
 
 ### **Como melhorar a organização de código no CSS e JavaScript?**
-1. No CSS, usar metodologias como BEM (Block, Element, Modifier) para organizar classes e adotar variáveis para estilização.
-2. No JavaScript, usar funções reutilizáveis e organizar o código em módulos.
+1. No CSS:
+ - usar metodologias como BEM (Block, Element, Modifier) para organizar classes.
+
+```css
+  .button {
+    color: white;
+}
+.button--primary {
+    background-color: blue;
+}
+```
+- Implementar variáveis no CSS.
+```css
+  :root {
+    --primary-color: blue;
+}
+```
+
+2. No JavaScript:
+- Usar funções reutilizáveis. ex
+```javascript
+function toggleClass(element, className) {
+    element.classList.toggle(className);
+}
+```
+- Organizar o código em módulos.
 
 ---
 
@@ -63,12 +90,30 @@ Este documento descreve as soluções propostas para as questões abordadas na c
 
 ### **Como deixar os logos mais responsivos e proporcionais?**
 1. Usar unidades relativas para ajustar largura e altura de forma automática.
-2. Estabelecer limites no contêiner do logo, como um tamanho máximo proporcional.
+```css
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+```
+
+2. Estabelecer limites no container do logo, como um tamanho máximo proporcional.
+```css
+.logo-container {
+    max-width: 200px;
+}
+
+```
 
 ### **Quais as melhores práticas de responsividade com foco em acessibilidade?**
-1. Garantir contraste de cores suficiente entre texto e fundo.
+1. Garantir contraste de cores suficiente entre texto e fundo. (Contrast Checker ou outra)
 2. Testar navegação no site com o teclado para garantir acessibilidade.
 3. Fornecer contexto para leitores de tela usando atributos como `aria-labels`.
+
+```html
+<button aria-label="Salvar documento">Salvar</button>
+```
 
 ---
 
@@ -80,30 +125,38 @@ Este documento descreve as soluções propostas para as questões abordadas na c
 3. Reduzir elementos não essenciais para evitar distrações.
 
 ### **Qual a melhor forma de melhorar a velocidade de carregamento de páginas?**
-1. Compactar recursos, como imagens e arquivos CSS e JavaScript.
+1. Compactar recursos, como imagens e arquivos CSS e JavaScript (TinyPNGs e minifiers).
 2. Ativar cache do navegador para armazenar recursos frequentemente usados.
-3. Implementar o carregamento lento de imagens para economizar recursos.
+ex apache
+3. Implementar o carregamento lento (lazy loading) de imagens para economizar recursos.
+
+```html
+<img src="imagem.jpg" loading="lazy" alt="Descrição">
+```
 
 ---
 
-## 5. Organização de Tarefas e Trabalho em Equipe
+## 5. Organização de Tarefas e Trabalho em Equipa
 
-### **Como dividir tarefas de desenvolvimento em equipe?**
-1. Utilizar ferramentas de gestão como Trello ou Notion para organizar tarefas.
-2. Dividir as tarefas de acordo com as habilidades de cada membro da equipe.
-3. Definir entregáveis claros e criar checklists para acompanhar o progresso.
+### **Como dividir tarefas de desenvolvimento em equipa?**
+1. Utilizar ferramentas de gestão como Trello, Notion, Jira para organizar tarefas.
+2. Dividir as tarefas de acordo com as habilidades de cada membro da equipa.
+3. Definir objectivos para entrega claros e criar checklists para acompanhar o progresso.
 
 ---
 
 ## 6. Uso de Tecnologias Específicas
 
 ### **Quando usar custom elements ou scripts?**
-- Custom elements são ideais para criar componentes reutilizáveis, como botões personalizados, e quando o escopo é limitado a funcionalidades específicas.
-- Scripts são usados para manipular o DOM dinamicamente ou adicionar comportamentos interativos.
+- **Custom elements:**
+  - Ideais para criar componentes reutilizáveis, ex: botões personalizados, e quando o scope é limitado a funcionalidades específicas.
+- **Scripts:** 
+  - São usados para manipular o DOM dinamicamente ou adicionar comportamentos que dependem de interação.
 
 ### **Adicionar CSS dinamicamente:**
 1. Combine arquivos sempre que possível para reduzir o número de requisições.
-2. Adicione dinamicamente estilos ao carregar páginas ou componentes específicos.
+
+  - Exemplo de implementação:
 
 ```javascript
 function loadCSS(file) {
@@ -114,3 +167,7 @@ function loadCSS(file) {
 }
 loadCSS('styles.css');
 ```
+
+2. Adicione dinamicamente estilos ao carregar páginas ou componentes específicos.
+
+
