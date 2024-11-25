@@ -48,34 +48,6 @@ Este documento descreve as soluções propostas para as questões abordadas na c
   }
   ```
 
-# Consultoria Técnica - Desenvolvimento Web
-
-Este documento descreve as soluções propostas para as questões abordadas na consultoria de desenvolvimento web. Ele está organizado em tópicos detalhados, abordando problemas técnicos, organização de código, responsividade, acessibilidade e melhores práticas.
-
----
-
-## 1. Resolução de Problemas Técnicos
-
-### **Quais podem ser os problemas com o Git?**
-- **Problemas comuns:**
-  - Conflitos de merge
-  - Histórico confuso
-  - Branches desorganizadas
-- **Soluções práticas:**
-  1. Adotar uma estratégia de branching, como Git Flow ou Feature Branching.
-  2. Evitar conflitos de merge ao sempre fazer pull antes de começar a trabalhar e dividir tarefas de forma eficiente.
-  3. Usar boas práticas de commits com mensagens claras e commits pequenos e frequentes.
-  4. Utilizar ferramentas como GitKraken, Sourcetree ou a integração do Git no VS Code.
-
----
-
-## 2. Estruturação e Organização do Código
-
-### **Como organizar o código para torná-lo mais responsivo?**
-1. Utilizar unidades relativas, como em, rem ou %.
-2. Implementar um sistema de grid básico usando técnicas de CSS como Flexbox ou Grid.
-3. Adaptar layouts a diferentes tamanhos de tela com media queries.
-
 ### **Qual o preparo para modularização correta?**
 1. Dividir responsabilidades, separando estilos, scripts e componentes em arquivos próprios.
 2. Organizar pastas, como `assets/css` para estilos, `assets/js` para scripts e `components` para HTML reutilizável.
